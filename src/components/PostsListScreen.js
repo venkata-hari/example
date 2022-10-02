@@ -11,7 +11,7 @@ function Screen1() {
     useEffect(()=>{
         async function getData(){
             try{
-              const res=await axios.get("http://localhost:5000/posts")
+              const res=await axios.get("https://venkatahari.herokuapp.com/posts")
               setData(res.data)
             }
             catch(error){
@@ -39,7 +39,7 @@ setData(data.map(x=>x.id===e.id?{...x,color:"red",count:x.count+1}:x))
 }
 const DeletePost=(id)=>{
     if(window.confirm("Ary you sure to delete this post?")){
-        axios.delete(`http://localhost:5000/posts/${id}`)
+        axios.delete(`https://venkatahari.herokuapp.com/posts/${id}`)
         setData(data.filter(x=>x.id!==id))      
         }
        

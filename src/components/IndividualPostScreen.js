@@ -35,7 +35,7 @@ function IndividualPostScreen() {
     }
     const getData=useCallback(async()=>{
      try{
-        const res=await axios.get(`http://localhost:5000/posts/${id}`)
+        const res=await axios.get(`https://venkatahari.herokuapp.com/posts/${id}`)
         setData(res.data)
      }
      catch(error){
@@ -47,7 +47,7 @@ function IndividualPostScreen() {
     useEffect(()=>{
     async function getData(){
    try{
-    const res=await axios.get("http://localhost:5000/comments")
+    const res=await axios.get("https://venkatahari.herokuapp.com/comments")
    setNewData(res.data)}
    catch(error){
     console.log(error)
@@ -74,7 +74,7 @@ const formSubmit=async(e)=>{
             display:UserComment.display,
             dis: UserComment.dis
         }
-        const res=await axios.post(`http://localhost:5000/comments`,req)
+        const res=await axios.post(`https://venkatahari.herokuapp.com/comments`,req)
         const newIndex=[...NewData,res.data]
         setNewData(newIndex)
     }

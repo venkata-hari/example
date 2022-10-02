@@ -49,7 +49,7 @@ function NewPost() {
         Follow:Post.Follow
 
     }
-    const res=await axios.post("http://localhost:5000/posts",req)
+    const res=await axios.post("https://venkatahari.herokuapp.com/posts",req)
     const NewIndexTwo=[...data,res.data]
     setData(NewIndexTwo)
     setValue(true)
